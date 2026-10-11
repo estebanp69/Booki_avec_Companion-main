@@ -1,6 +1,7 @@
 /****** General ***********/
 * {
     font-family: 'Raleway', sans-serif;
+    box-sizing: border-box;
 }
 
 :root {
@@ -16,13 +17,13 @@
 body {
     display: flex;
     justify-content: center;
+    margin: 0;
 }
 
 .main-container {
     width: 100%;
     max-width: 1440px;
     padding: 0 50px;
-    box-sizing: border-box;
 }
 
 a {
@@ -55,13 +56,141 @@ a {
 }
 
 .neutral-star {
-    color: var(--main-bg-color)
+    color: var(--main-bg-color);
 }
 
+
+/****** Header ***********/
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+}
+
+header img {
+    width: 100px;
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    gap: 60px;
+}
+
+header nav a {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 10px;
+    border-top: 3px solid transparent;
+}
+
+header nav a:hover {
+    color: var(--main-color);
+    border-top-color: var(--main-color);
+}
+
+
+/****** Recherche ***********/
+
+.search-section {
+    margin-top: 30px;
+}
+
+.search-section h1 {
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+
+.search-description {
+    margin-bottom: 25px;
+}
+
+/* Formulaire : les trois parties sont alignées */
+
+.search-form {
+    display: flex;
+    align-items: stretch;
+    width: fit-content;
+    max-width: 100%;
+    height: 50px;
+    margin-bottom: 35px;
+}
+
+/* Partie 1 : icône de localisation */
+
+.search-icon-location {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    flex-shrink: 0;
+    background-color: var(--main-bg-color);
+    border-radius: 15px 0 0 15px;
+}
+
+.search-icon-location i {
+    color: #000;
+    font-size: 18px;
+}
+
+/* Partie 2 : champ de recherche */
+
+.search-form input {
+    width: 230px;
+    min-width: 0;
+    padding: 0 15px;
+    border: 1px solid var(--main-bg-color);
+    font-size: 16px;
+    font-weight: 700;
+    outline-offset: -2px;
+}
+
+.search-form input::placeholder {
+    color: #000;
+    opacity: 1;
+}
+
+/* Partie 3 : bouton Rechercher */
+
+.search-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 16px;
+    border: none;
+    border-radius: 0 15px 15px 0;
+    background-color: var(--main-color);
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.search-button:hover {
+    background-color: #0053d6;
+}
+
+/* Sur desktop : le texte est visible, la loupe est masquée */
+
+.search-text {
+    display: inline;
+}
+
+.search-mobile-icon {
+    display: none;
+}
+
+
 /****** Hebergements And Populaires ***********/
+
 .hebergements-and-populaires {
     display: flex;
     justify-content: space-between;
+    gap: 30px;
 }
 
 .hebergements-and-populaires section {
@@ -71,12 +200,16 @@ a {
     box-sizing: border-box;
 }
 
+
 /****** Hebergements ***********/
+
 .hebergements {
     width: 65%;
 }
 
+
 /****** Populaires ***********/
+
 .populaires {
     width: 32%;
 }
@@ -122,13 +255,11 @@ a {
 }
 
 
+/****** Responsive : à compléter plus tard ***********/
 
-
-/* Le code ci-dessous correspond à la version responsive uniquement */
-
-/****** Media queries ***********/
-/* Medium devices (tablets, less/equal than 1024px) */
+/* Tablettes */
 @media (max-width: 1024px) {
+
     .hebergements-and-populaires {
         flex-direction: column;
     }
@@ -146,6 +277,7 @@ a {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        gap: 20px;
     }
 
     .populaires-cards a {
@@ -161,7 +293,156 @@ a {
     }
 }
 
-/* Small devices (phones, less than 768px) */
+
+/* Mobiles : à développer dans la prochaine étape */
 @media (max-width: 767.98px) {
-    /* ... */
+
+    /* Le responsive sera ajouté plus tard */
+
+}
+
+/* FILTRES */
+
+.filters {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.filters h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.filter-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.filter {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 20px;
+    border: 2px solid #d9d9d9;
+    border-radius: 30px;
+    background-color: white;
+    font-family: 'Raleway', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.filter i {
+    color: #0065FC;
+    font-size: 20px;
+}
+
+/* EFFET AU SURVOL */
+
+.filter:hover {
+    background-color: #DEEBFF;
+}
+
+/* INFORMATION */
+
+.search-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.search-info i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border: 1px solid #d9d9d9;
+    border-radius: 50%;
+    color: #0065FC;
+    font-size: 12px;
+}
+
+.search-info p {
+    margin: 0;
+    font-size: 16px;
+}
+
+/* SECTION HÉBERGEMENTS */
+
+.hebergements {
+    background-color: #F2F2F2;
+    border-radius: 20px;
+    padding: 30px;
+}
+
+.hebergements .section-title {
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+.hebergements-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+/* LIEN DE LA CARTE */
+
+.hebergement-link {
+    display: block;
+    width: 30%;
+    text-decoration: none;
+    color: black;
+}
+
+/* CARTE HÉBERGEMENT */
+
+.hebergement-card {
+    height: 100%;
+    padding: 5px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* IMAGE */
+
+.hebergement-card img {
+    width: 100%;
+    height: 124px;
+    object-fit: cover;
+    border-radius: 15px 15px 0 0;
+    display: block;
+}
+
+/* CONTENU DE LA CARTE */
+
+.hebergement-card-content {
+    padding: 10px;
+}
+
+.hebergement-card .card-title {
+    margin: 0 0 8px;
+    font-size: 16px;
+}
+
+.hebergement-card .card-subtitle {
+    margin: 0 0 8px;
+    font-size: 14px;
+}
+
+.hebergement-card .card-rating {
+    color: #0065FC;
+    font-size: 12px;
+}
+
+.hebergement-card .neutral-star {
+    color: #F2F2F2;
 }
