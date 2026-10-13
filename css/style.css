@@ -57,7 +57,7 @@ img {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 100px;
+    height: 60px;
 }
 
 .site-header .logo img {
@@ -348,7 +348,7 @@ img {
 }
 
 .hebergement-card-content .card-rating .neutral-star {
-    color: var(--main-bg-color) !important;
+    color: var(--main-bg-color);
 }
 
 .afficher-plus {
@@ -569,6 +569,12 @@ img {
 
     .main-container {
         padding: 0 30px;
+    }
+
+
+    .filters {
+        flex-direction: column;
+        align-items: start;
     }
 
     /****** HÉBERGEMENTS ET POPULAIRES ******/
@@ -844,7 +850,7 @@ img {
     .popular-card > img {
         flex: 0 0 33%;
         width: 33%;
-        height: 100%;
+        height: 160px;
     }
 
     .popular-card-content {
@@ -900,5 +906,31 @@ img {
 
     .footer-column {
         width: 100%;
+    }
+}
+
+
+@media screen and (min-width: 1025px) {
+
+    .popular-card {
+        height: 170px
+    }
+
+    .activity-card {
+        height: auto;
+        overflow: visible;
+    }
+
+    .activity-card img {
+        display: block;
+        width: 100%;
+    }
+
+    .activity-card h3 {
+        min-height: 70px;
+        margin: 0;
+        padding: 0 15px;
+        display: flex;
+        align-items: center;
     }
 }
