@@ -875,6 +875,10 @@ img {
         height: 140px;
     }
 
+    .activity-card img[src*="florian-wehde"] {
+        object-position: 50% 10%;
+    }
+
     .activity-card h3 {
         min-height: 60px;
         padding: 0 15px;
